@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaraConnect - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Reset and global styles */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif; /* or your preferred font */
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Header / Navbar */
+    header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      height: 80px;
+    }
+    .logo img {
+      height: 50px;
+      width: 180px;
+      margin-left: 110px;
+    }
+    nav ul {
+      display: flex;
+      align-items:center;
+      margin-left: 360px;
+      gap: 2rem;
+    }
+    nav li {
+      cursor: pointer;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .auth-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 10px;
+      margin: 0 auto;
+      margin-left: 28px;
+    }
+    .auth-links a {
+      padding: 0.6rem 1rem;
+      border-radius: 50px;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .auth-links a.signup {
+      background-color: #333;
+      color: #fff;
+    }
+    .auth-links a:hover {
+      background-color: #fff;
+      color: #333;
+      border-color: #333;
+    }
+    nav ul a:hover{
+      color: #2973B2;
+    }
+
+    /* Hero Section (one side text, one side image) */
+    .hero {
+      top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 2rem;
+      max-width: 1250px;
+      margin: 0 auto;
+      margin-top: 25px;
+      height: 620px;
+      background-color: #F9F6EE;
+      border-radius: 15px;
+
+    }
+    .hero-left {
+      flex: 1;
+      padding-left: 1rem;
+    }
+    .hero-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-left h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: 800px;
+    }
+.highlight1 {
+  display: inline-block;
+      background-color: #fff;
+      color: #000;
+      padding: 0.2em 0.4em;
+      margin-bottom: 0.3em;
+      margin-right: 0.2em;
+      rotate: -3deg;
+      margin-left: 40px;
+}
+
+.highlight2 {
+  display: inline-block;
+      background-color: #fff;
+      color: #000;
+      padding: 0.2em 0.4em;
+      margin-bottom: 0.3em;
+      margin-right: 0.2em;
+      margin-left: 40px;}
+
+.highlight3 {
+  display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 0.2em 0.4em;
+      margin-bottom: 0.3em;
+      margin-right: 0.2em;
+      rotate: -6deg;
+      margin-left: 60px;
+}
+
+    .hero-left p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      max-width: 680px;
+      line-height: 1.5;
+      margin-left: 60px;
+    }
+    .hero-left .cta-button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #333;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-left: 60px;
+    }
+    .hero-left .cta-button:hover{
+      background-color: #333;
+      color: #fff;
+    }
+    .hero-right img {
+      max-width: 100%;
+      height: 620px;
+      border-radius: 8px;
+      margin-right: -20px; 
+      margin-top: -60px;
+    }
+
+
+  
+        .ourtaraimg img{
+          height: 20px;
+          width: 130px;
+          margin-left: 760px;
+          margin-top: 45px;
+          margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-top: -60px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 20px;
+
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 68%;
+            height: 250px;
+            border-radius: 5px;
+            background-size: cover;
+        }
+
+        .card-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        .user-info b {
+            font-size: 16px;
+            margin-left: 36px;
+        }
+        .user-info span {
+          font-size: 14px;
+          margin-left: 36px;
+        }
+
+        .connect-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 38px;
+        }
+
+        .connect-btn:hover {
+            background-color: #333;
+        }
+
+        
+.alt-container {
+    width: 80%;
+    max-width: 1250px;
+    height: 620px;
+    background-color: #EFF5F4;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 160px;
+    margin-top: 20px;
+}
+
+.alt-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.alt-toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.alt-toggle-buttons li {
+    list-style: none;
+}
+
+.alt-tab-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.alt-tab-button.active {
+    background-color: black;
+    color: white;
+}
+
+.alt-features-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    min-height: 150px;
+}
+
+.alt-image-section img {
+    width: 350px;
+    height: 480px;
+    border-radius: 10px;
+    margin-left: -180px;
+    margin-top: -180px;
+    margin-bottom: -140px;
+}
+
+.alt-text-section {
+    text-align: left;
+    max-width: 400px;
+    margin-top: -30px;
+}
+
+.alt-tab-wrapper {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.alt-tab-content {
+    display: none;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.alt-tab-content.active {
+    display: flex;
+}
+
+.alt-get-started {
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 60px;
+}
+
+.alt-get-started:hover {
+    background-color: black;
+    color: white;
+}
+
+/* reviews.css */
+
+.custom-reviews-section {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    margin-top: 60px;
+}
+
+.custom-reviews-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.custom-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.custom-reviews-container {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    justify-content: center;
+    position: relative;
+}
+
+.custom-review {
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transform: scale(0.9);
+    transition: transform 0.4s, opacity 0.3s;
+}
+.custom-review img{
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  background-size: cover;
+}
+.custom-review.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.custom-stars {
+    color: gold;
+}
+
+.custom-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    position: relative;
+}
+
+.custom-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custom-dot.active {
+    background: black;
+}
+
+.custom-nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.custom-prev-btn, .custom-next-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: black;
+    position: absolute;
+}
+
+.custom-prev-btn {
+    left: 20px;
+    margin-top: 0px;
+    margin-left: 600px;
+}
+
+.custom-next-btn {
+    right: 20px;
+    margin-top: 0px;
+    margin-right: 600px;
+}
+
+.custom-prev-btn:hover, .custom-next-btn:hover {
+    color: gray;
+}
+.footer {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 1px solid #ddd;
+            margin-left: 80px;
+            height: 350px;
+            margin-top: 20px;
+        }
+        .footer .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .footer .logo img{
+            width: 180px;
+            height: 50px;
+            margin-left: -2px;
+        }
+        .footer p {
+            color: #666;
+            margin: 10px 0;
+            line-height: 20px;
+        }
+        .footer .links {
+            margin-top: 10px;
+        }
+        .footer .links a {
+            margin-right: 25px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer .contact {
+            margin-top: -136px;
+            color: #333;
+            margin-left: 900px;
+        }
+        .footer .contact p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 26px;
+        }
+        .footer .social-icons {
+            margin-top: -95px;
+            display: flex;
+            gap: 10px;
+            margin-left: 900px;
+        }
+        .footer .social-icons a {
+            color: #333;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .footer .app-section {
+            display: none;
+        }
+
+      
+
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const flashMessage = document.getElementById("flash-message");
+        if (flashMessage) {
+            setTimeout(() => {
+                window.location.href = "{{ url_for('home') }}";
+            }, 5000); // 5 seconds delay
+        }
+    });
+</script>
+</head>
+<body>
+    
+  <!-- Header -->
+  <header>
+    <div class="logo"><img src="{{ url_for('static', filename='logo3.png') }}"></div>
+    <nav>
+      <ul>
+        <a href="{{ url_for('home') }}"><li>Home</li></a>
+        <a href="{{ url_for('for_influencer') }}"><li>For Influencers</li></a>
+        <a href="{{ url_for('for_brands') }}"><li>For Brands</li></a>
+        <a href="{{ url_for('home') }}#alt-container"><li>Features</li></a>
+      </ul>
+    </nav>
+    <div class="auth-links">
+      <a href="{{ url_for('for_brands') }}" class="signup">Collaborate with Us</a>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>
+        <span class="highlight1">Connect</span><br>
+        <span class="highlight2">Promote</span><br>
+        <span class="highlight3">Groww !!</span>
+      </h1>
+      <p>Bringing influencers and brands together<br> for impactful collaborations, shared success and limitless growth.</p>
+      <a href="forInfluencer.html" class="cta-button">For Influencers</a>
+      <a href="forBrands.html" class="cta-button">For Brands</a>
+    </div>
+    <div class="hero-right">
+      <!-- Replace "images/hero-woman.png" with your actual hero image -->
+      <img src="{{ url_for('static', filename='herosecpng.png') }}" alt="Hero Woman" />
+    </div>
+  </section>
+
+  
+  <div class="ourtaraimg"><img src="{{ url_for('static', filename='yellow.png') }}"></div>
+  <h2>Our Taras</h2>
+    <div class="container">
+        <div class="card">
+            <img src="{{ url_for('static', filename='sudha3.jpg') }}" alt="User Image">
+            <div class="card-content">
+                <div class="user-info">
+                    <b>Sudha</b>
+                    <span>691k+ followers</span>
+                </div>
+                <a href="https://www.instagram.com/im_ksudha?igsh=MXNrMWdmdnEyYno4Yg%3D%3D&utm_source=qr"><button class="connect-btn">Connect</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='kusuma.jpg') }}" alt="User Image">
+            <div class="card-content">
+                <div class="user-info">
+                    <b>Kusuma</b>
+                    <span>248k+ followers</span>
+                </div>
+                <a href="https://www.instagram.com/kusumapenumudi?igsh=NjI0enc4bGw5NWs3">
+                <button class="connect-btn">Connect</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='Sohel.jpg') }}" alt="User Image">
+            <div class="card-content">
+                <div class="user-info">
+                    <b>Sohel</b>
+                    <span>872k+ followers</span>
+                </div>
+                <a href="https://www.instagram.com/syedsohelryan_official?igsh=MWUwZnFpemxkaWNneA==">
+                <button class="connect-btn">Connect</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='influencers4.jpg') }}" alt="User Image">
+            <div class="card-content">
+                <div class="user-info">
+                    <b>Sahasra</b>
+                    <span>944k+ followers</span>
+                </div>
+                <a href="https://www.instagram.com/sahasra_honey_varma?igsh=azBmcGdtdDVmbnVw">
+                <button class="connect-btn">Connect</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='adi.jpg') }}" alt="User Image">
+            <div class="card-content">
+                <div class="user-info">
+                    <b>Adi</b>
+                    <span>24.3k+ followers</span>
+                </div>
+                <a href="https://www.instagram.com/adi_dancer07?igsh=aWRvOHVyMmxycTE=">
+                <button class="connect-btn">Connect</button></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='anchorsiva.jpg') }}" alt="User Image">
+            <div class="card-content">
+                <div class="user-info">
+                    <b>Shiva</b>
+                    <span>178k+ followers</span>
+                </div>
+                <a href="https://www.instagram.com/anchorshiva?igsh=MWEwMmE2cGVldnQ3eg==">
+                <button class="connect-btn">Connect</button></a>
+            </div>
+        </div>
+    </div>
+    <section id="alt-container">
+  <div class="alt-container">
+        <h2 class="alt-title">Features</h2>
+        <ul class="alt-toggle-buttons">
+            <li><button class="alt-tab-button active" onclick="showAltTab('influencers')">For Influencers</button></li>
+            <li><button class="alt-tab-button" onclick="showAltTab('brands')">For Brands</button></li>
+        </ul>
+
+        <div class="alt-features-content">
+            <div class="alt-image-section">
+                <img src="{{ url_for('static', filename='featuresimage.png') }}" alt="Feature Image">
+            </div>
+            <div class="alt-text-section">
+                <div class="alt-tab-wrapper">
+                    <ul id="influencers" class="alt-tab-content active">
+                        <li>No sensitive data will be shared with brands.</li><br><br>
+                        <li>Seamlessly connect with different brands.</li><br><br>
+                        <li>Be the one to promote at first.</li><br><br>
+                        <li>Get a chance to have baggage of promotions</li><br><br>
+                        <li>Reply back to brands efficiently.</li><br><br>
+                        <li>Secure payments</li>
+                    </ul>
+                    <ul id="brands" class="alt-tab-content">
+                        <li>Connect with top influencers seamlessly.</li><br><br>
+                        <li>Grow brand awareness with the best influencers.</li><br><br>
+                        <li>Easy tracking of influencer performance.</li><br><br>
+                        <li>Monthly insights and analytics.</li><br><br>
+                        <li>Direct communication with influencers.</li><br><br>
+                        <li>Exclusive brand campaigns.</li>
+                    </ul>
+                </div>
+                <button class="alt-get-started">Get Started</button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="custom-reviews-section">
+    <h2 class="custom-reviews-heading">What Our Clients Say About Us</h2>
+    <div class="custom-carousel">
+        <div class="custom-reviews-container">
+            <div class="custom-review">
+                <img src="{{ url_for('static', filename='adi.jpg') }}" alt="Client Photo">
+                <h3>Leo</h3>
+                <p class="custom-role">Lead Designer</p>
+                <p class="custom-review-text">It was a very good experience</p>
+                <div class="custom-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            </div>
+            <div class="custom-review active">
+                <img src="{{ url_for('static', filename='kusuma.jpg') }}" alt="Client Photo">
+                <h3>Anna</h3>
+                <p class="custom-role">Marketing Manager</p>
+                <p class="custom-review-text">Excellent service and support</p>
+                <div class="custom-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="custom-review">
+                <img src="{{ url_for('static', filename='sudhakanduri.jpg') }}" alt="Client Photo">
+                <h3>David</h3>
+                <p class="custom-role">Business Analyst</p>
+                <p class="custom-review-text">Very professional team</p>
+                <div class="custom-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            </div>
+            <div class="custom-review">
+                <img src="{{ url_for('static', filename='anchorsiva.jpg') }}" alt="Client Photo">
+                <h3>Leo</h3>
+                <p class="custom-role">Lead Designer</p>
+                <p class="custom-review-text">It was a very good experience</p>
+                <div class="custom-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            </div>
+            <div class="custom-review active">
+                <img src="{{ url_for('static', filename='adi.jpg') }}" alt="Client Photo">
+                <h3>Anna</h3>
+                <p class="custom-role">Marketing Manager</p>
+                <p class="custom-review-text">Excellent service and support</p>
+                <div class="custom-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <div class="custom-review">
+                <img src="{{ url_for('static', filename='kusuma.jpg') }}" alt="Client Photo">
+                <h3>David</h3>
+                <p class="custom-role">Business Analyst</p>
+                <p class="custom-review-text">Very professional team</p>
+                <div class="custom-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-dots-container">
+        <button class="custom-prev-btn">&#10094;</button>
+        <span class="custom-dot active"></span>
+        <span class="custom-dot"></span>
+        <span class="custom-dot"></span>
+        <span class="custom-dot"></span>
+        <span class="custom-dot"></span>
+        <span class="custom-dot"></span>
+        <button class="custom-next-btn">&#10095;</button>
+    </div>
+</section>
+
+  <footer class="footer">
+        <div class="logo"><img src="{{ url_for('static', filename='logo3.png') }}"></div>
+        <p>Bringing influencers and brands together<br> for impactful collaborations, shared<br> success and limitless growth.</p>
+        <div class="links">
+            <a href="#">Overview</a>
+            <a href="#">Features</a>
+            <a href="#">Influencers</a>
+            <a href="#">Brands</a>
+            <a href="#">Mass promotions</a>
+            <a href="#">Privacy</a>
+        </div>
+        
+        <div class="contact">
+            <p><b> <span style="color:black;font-weight:bold">Contact Us:</span></b></p>
+            <p>Email: promotions.taraconnect@gmail.com</p>
+            <p>Phone: +91 987654321</p>
+        </div>
+
+
+        <hr style="width:100%;text-align:left;margin-left:0; margin-top: 90px;">
+        <h5 style="font-size: 16px; margin-top: 12px"> &#xA9; 2025 Tara Connect. All rights reserved.</h5>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/taraconnect/"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        
+    </footer>
+    <script>
+        function showAltTab(tabName) {
+    document.querySelectorAll('.alt-tab-button').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    document.querySelectorAll('.alt-tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    document.querySelector(`[onclick="showAltTab('${tabName}')"]`).classList.add('active');
+
+    document.getElementById(tabName).classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    showAltTab('influencers');
+});
+// reviews.js
+
+document.addEventListener("DOMContentLoaded", function () {
+    const reviews = document.querySelectorAll(".custom-review");
+    const dots = document.querySelectorAll(".custom-dot");
+    const prevBtn = document.querySelector(".custom-prev-btn");
+    const nextBtn = document.querySelector(".custom-next-btn");
+
+    let currentIndex = 1; // Start at the second review (index 1)
+
+    function updateCarousel(index) {
+        // Loop through reviews to show 3 at a time, with the center one zoomed in
+        reviews.forEach((review, i) => {
+            const dist = Math.abs(i - index);
+            if (dist <= 1) {
+                review.style.display = "block";
+                review.classList.add("active");
+                review.style.transform = dist === 0 ? "scale(1)" : "scale(0.9)";
+            } else {
+                review.style.display = "none";
+            }
+        });
+
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+    }
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % reviews.length;
+        updateCarousel(currentIndex);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+        updateCarousel(currentIndex);
+    });
+
+    // Initial display
+    updateCarousel(currentIndex);
+});
+
+    </script>
+  
+</body>
+</html>

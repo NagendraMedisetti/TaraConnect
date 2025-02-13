@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For Influencers</title>
+</head>
+<style>
+    /* Reset and global styles */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif; /* or your preferred font */
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Header / Navbar */
+    header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      height: 80px;
+    }
+    .logo img {
+      height: 50px;
+      width: 180px;
+      margin-left: 110px;
+    }
+    nav ul {
+      display: flex;
+      align-items:center;
+      margin-right: 150px;
+      gap: 0rem;
+    }
+    nav li {
+      cursor: pointer;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    nav ul a:hover{
+      color: #2973B2;
+    }
+    .auth-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 10px;
+      margin: 0 auto;
+      margin-left: 28px;
+    }
+    .auth-links a {
+      padding: 0.6rem 1rem;
+      border-radius: 50px;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+    .auth-links a.signup {
+      background-color: #333;
+      color: #fff;
+    }
+    .brand-wrapper {
+            display: flex;
+            margin-left: 315px;
+            margin-top: 35px;
+            width: 100%;
+            height: 580px;
+            max-width: 900px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-form-section {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .brand-form-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            margin-left: 58px;
+            letter-spacing: 1px;
+        }
+
+        .brand-form-section p {
+            color: #555;
+            margin-bottom: 20px;
+            margin-left: 1px;
+            font-size: 14px;
+        }
+
+        .brand-input, .brand-select {
+            width: 68%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 62px;
+        }
+
+        .brand-signup-btn {
+            width: 68%;
+            padding: 10px;
+            background: black;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 16px;
+            margin-left: 62px;
+        }
+        .brand-signup-btn:hover {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
+
+        .brand-influencer-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .brand-influencer-link a {
+            color: blue;
+            text-decoration: none;
+            margin-top: 16px;
+        }
+          .brand-right-section {
+            width: 46%;
+            position: relative;
+            background: url('static/ringlight.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding:15px;
+            border-radius: 20px;
+        }
+        .brand-testimonial {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 10px;
+            color: white;
+            width: 320px;
+            height: 135px;
+            margin-left: 30px;
+            box-shadow: 0 0 3px 0 ;
+            backdrop-filter: blur(14px);
+        }
+        .brand-testimonial p {
+            font-size: 14px;
+        }
+        .brand-user {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .brand-user img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .brand-stars {
+            color: whitesmoke;
+            margin-top: -36px;
+            margin-left: 220px;
+        }
+
+        .brand-navigation {
+            position: absolute;
+            top: 132px;
+            right: 330px;
+        }
+
+        .brand-navigation a {
+            margin-left: 10px;
+            padding: 8px 14px;
+            border: 1px solid white;
+            border-radius: 20px;
+            color: white;
+            font-size: 12px;
+            text-decoration: none;
+        }
+    </style>
+<body>
+    <header>
+    <div class="logo"><img src="{{ url_for('static', filename='logo3.png') }}"></div>
+    <nav>
+      <ul>
+        <a href="{{ url_for('home') }}"><li>Home</li></a>
+        <div class="auth-links">
+            <a href="{{ url_for('for_brands') }}" class="signup">For Brands</a>
+          </div>
+      </ul>
+    </nav>
+  </header>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="brand-wrapper">
+        <div class="brand-form-section">
+            <h2>Are you an Influencer?</h2>
+            <p>Congratulations you are at right spot to collaborate with brands.</p>
+            <form method="POST" action="{{ url_for('for_influencer') }}">
+                <input class="brand-input" type="text" name="influencer_name" placeholder="Name" required>
+                <input class="brand-input" type="email" name="influ_email" placeholder="Email" required>
+                <input class="brand-input" type="tel" name="phone" placeholder="Phone no." required>
+                <select class="brand-select" name="social_category" required>
+                    <option value="">Social Media URL</option>
+                    <option value="Fashion & Apparel">Fashion & Apparel</option>
+                    <option value="Beauty & Skincare">Beauty & Skincare</option>
+                    <option value="Food & Beverages">Food & Beverages</option>
+                    <option value="Tech & Gadgets">Tech & Gadgets</option>
+                    <option value="Fitness & Wellness">Fitness & Wellness</option>
+                    <option value="Travel & Tourism">Travel & Tourism</option>
+                    <option value="Education & E-learning">Education & E-learning</option>
+                    <option value="Shopping Mall">Shopping Mall</option>
+                    <option value="Other">Other</option>
+                </select>
+                <select class="brand-select" name="follower_count" required>
+                    <option value="">Number of Followers</option>
+                    <option value="Nano Influencers">Nano (1K-10K followers)</option>
+                    <option value="Micro Influencers">Micro (10K-100K followers)</option>
+                    <option value="Macro Influencers">Macro (100K-1M followers)</option>
+                    <option value="Celebrity Influencers">Celebrity (1M+ followers)</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input class="brand-input" type="text" name="promo_charges" placeholder="Promotional Charges for Story, Post, Reel" required>
+                <button class="brand-signup-btn">Submit Details</button>
+            </form>
+            <div class="brand-influencer-link">
+                Are you a Brands?? <a href="{{ url_for('for_brands') }}">Brand Form</a>
+            </div>
+        </div>
+         <div class="brand-right-section">
+    </div>
+           
+        </div>
+    </div>
+</body>
+</html>
